@@ -80,7 +80,7 @@ AI Productivity OS combines habit tracking, analytics, and AI-generated recommen
 │ MongoDB  │  │  Groq   │
 │  Atlas   │  │   AI    │
 └──────────┘  └─────────┘
-
+```
 ## Screenshots
 
 ### Login Page
