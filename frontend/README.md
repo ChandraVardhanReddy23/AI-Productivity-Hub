@@ -1,16 +1,143 @@
-# React + Vite
+# AI Productivity OS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered productivity platform that helps users build habits, track streaks, visualize progress, and receive personalized productivity insights.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+AI Productivity OS combines habit tracking, analytics, and AI-generated recommendations into a single dashboard. Users can create habits, track daily progress, monitor streaks, and receive actionable suggestions powered by Groq LLMs.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Authentication
 
-## Expanding the ESLint configuration
+* User Signup and Login
+* JWT-based Authentication
+* Protected Routes
+* Persistent User Data with MongoDB Atlas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Habit Tracking
+
+* Create, Edit, Delete Habits
+* Habit Categories
+* Daily Completion Tracking
+* Streak Management
+
+### Analytics Dashboard
+
+* Habit Completion Statistics
+* Productivity Heatmap
+* Category Distribution Analytics
+* Performance Insights
+
+### AI Productivity Reports
+
+* Weekly Productivity Summary
+* Strongest Habit Detection
+* Weakest Habit Detection
+* Category Analysis
+* Personalized Recommendations
+
+## Tech Stack
+
+### Frontend
+
+* React
+* React Router
+* Context API
+* Recharts
+* React Calendar Heatmap
+* CSS
+
+### Backend
+
+* Node.js
+* Express.js
+* JWT Authentication
+* MongoDB Atlas
+* Mongoose
+
+### AI
+
+* Groq API
+* Llama Models
+
+## Architecture
+
+Frontend (React)
+↓
+REST API (Express)
+↓
+MongoDB Atlas
+↓
+Groq AI
+
+## Screenshots
+
+### Login Page
+
+![Login](docs/screenshots/login.png)
+
+### Signup Page
+
+![Signup](docs/screenshots/signup.png)
+
+### Dashboard
+
+![Dashboard](docs/screenshots/dashboard1.png)
+
+### Habits Page
+
+![Habits](docs/screenshots/habits.png)
+
+### AI Insights
+![AI Insights](docs/screenshots/dashboard2.png)
+
+(Add Screenshot Here)
+
+## Local Setup
+
+### Clone Repository
+
+git clone <repo-url>
+
+### Backend
+
+cd backend
+
+npm install
+
+Create a .env file:
+
+PORT=3000
+
+JWT_SECRET=your_secret
+
+MONGO_URI=your_mongodb_uri
+
+GROQ_API_KEY=your_groq_api_key
+
+npm start
+
+### Frontend
+
+cd frontend
+
+npm install
+
+Create a .env file:
+
+VITE_API_URL=http://localhost:3000
+
+npm run dev
+
+## Future Improvements
+
+* Productivity Score Trends
+* Smart Goal Planning
+* Habit Reminders
+* AI Goal Coaching
+* Mobile Application
+
+## Author
+
+Chandra Vardhan Reddy
