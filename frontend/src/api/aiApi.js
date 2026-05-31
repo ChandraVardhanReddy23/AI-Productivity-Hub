@@ -1,10 +1,13 @@
+import.meta.env.VITE_API_URL
+const API_URL = `${import.meta.env.VITE_API_URL}/ai/insights`;
+
 export async function getAIInsights(
   habits
 ){
 
   const response =
     await fetch(
-      "http://localhost:3000/ai/insights",
+      API_URL,
       {
 
         method: "POST",
