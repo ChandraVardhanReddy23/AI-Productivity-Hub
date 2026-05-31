@@ -63,13 +63,23 @@ AI Productivity OS combines habit tracking, analytics, and AI-generated recommen
 
 ## Architecture
 
-Frontend (React)
-↓
-REST API (Express)
-↓
-MongoDB Atlas
-↓
-Groq AI
+## System Architecture
+
+```text
+┌─────────────┐
+│ React Frontend │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│ Express API │
+└───┬─────┬───┘
+    │     │
+    ▼     ▼
+┌──────────┐  ┌─────────┐
+│ MongoDB  │  │  Groq   │
+│  Atlas   │  │   AI    │
+└──────────┘  └─────────┘
 
 ## Screenshots
 
@@ -92,7 +102,7 @@ Groq AI
 ### AI Insights
 ![AI Insights](docs/screenshots/dashboard2.png)
 
-(Add Screenshot Here)
+
 
 ## Local Setup
 
