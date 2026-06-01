@@ -1,10 +1,10 @@
-# AI Productivity OS
+# AI Productivity Hub
 
 An AI-powered productivity platform that helps users build habits, track streaks, visualize progress, and receive personalized productivity insights.
 
 ## Overview
 
-AI Productivity OS combines habit tracking, analytics, and AI-generated recommendations into a single dashboard. Users can create habits, track daily progress, monitor streaks, and receive actionable suggestions powered by Groq LLMs.
+AI Productivity Hub combines habit tracking, analytics, and AI-generated recommendations into a single dashboard. Users can create habits, track daily progress, monitor streaks, and receive actionable suggestions powered by Groq LLMs.
 
 ## Features
 
