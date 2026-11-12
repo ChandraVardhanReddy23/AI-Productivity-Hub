@@ -7,6 +7,60 @@ const groq =
       process.env.GROQ_API_KEY
   });
 
+const FALLBACK_MODEL =
+  "llama-3.3-70b-versatile";
+
+async function getGroqModel() {
+
+  try {
+
+    const response =
+      await fetch(
+        "https://api.groq.com/openai/v1/models",
+        {
+          headers: {
+            Authorization:
+              `Bearer ${process.env.GROQ_API_KEY}`
+          }
+        }
+      );
+
+    if (!response.ok) {
+
+      throw new Error(
+        `Groq model request failed with status ${response.status}`
+      );
+
+    }
+
+    const { data } =
+      await response.json();
+
+    const activeLlamaModel =
+      Array.isArray(data)
+        ? data.find(
+          (model) =>
+            model.active === true &&
+            typeof model.id === "string" &&
+            model.id.includes("llama-3")
+        )
+        : undefined;
+
+    return activeLlamaModel?.id ||
+      FALLBACK_MODEL;
+
+  } catch (error) {
+
+    console.error(
+      "Unable to retrieve active Groq models. Using fallback model.",
+      error
+    );
+
+    return FALLBACK_MODEL;
+
+  }
+}
+
 const generateInsights =
   async (req, res) => {
 
@@ -49,7 +103,7 @@ const generateInsights =
       await groq.chat.completions.create({
 
         model:
-          "llama-3.3-70b-versatile",
+          await getGroqModel(),
 
         messages: [
           {
