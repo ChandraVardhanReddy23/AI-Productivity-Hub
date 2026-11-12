@@ -3,13 +3,16 @@ import {useContext} from "react";
 import {AuthContext} from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Login(){
     const [username,setUsername]=useState("");
     const [password,setPassword]=useState("");
     const { login } =useContext(AuthContext);
     const navigate =useNavigate();
     async function handleLogin(){
-        const response=await fetch("http://localhost:3000/auth/login",{
+        const response=await fetch(`${API_URL}/auth/login`,{
             method:"POST",
             headers:{
                 "Content-Type":

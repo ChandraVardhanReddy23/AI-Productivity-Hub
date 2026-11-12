@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Signup() {
 
   const [username, setUsername] =useState("");
@@ -9,7 +12,7 @@ function Signup() {
   async function handleSignup() {
 
     const response = await fetch(
-      "http://localhost:3000/auth/signup",
+    `${API_URL}/auth/signup`,
       {
         method: "POST",
 
