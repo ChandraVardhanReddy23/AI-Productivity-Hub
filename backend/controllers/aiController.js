@@ -8,7 +8,7 @@ const groq =
   });
 
 const FALLBACK_MODEL =
-  "llama-3.3-70b-versatile";
+  "llama-3.1-70b-versatile";
 
 async function getGroqModel() {
 
@@ -42,7 +42,8 @@ async function getGroqModel() {
           (model) =>
             model.active === true &&
             typeof model.id === "string" &&
-            model.id.includes("llama-3")
+            (model.id.includes("llama-3") ||
+              model.id.includes("llama3"))
         )
         : undefined;
 
